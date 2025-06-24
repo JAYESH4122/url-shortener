@@ -1,0 +1,397 @@
+@font-face {
+  font-family: "ProximaNova-regular";
+  src: url("./assets/fonts/ProximaNova-Light-367531d5c657281665cd0d8f31ae4b79.otf");
+}
+
+@font-face {
+  font-family: "ProximaNova-semiBold";
+  src: url("./assets/fonts/ProximaNova-Regular-7bc9ce404c297c24f2104c18ec4a8526.otf");
+}
+
+@font-face {
+  font-family: "ProximaNova-bold";
+  src: url("./assets/fonts/ProximaNova-Semibold-227817852e96b494055e9b16561bedf9.otf");
+}
+
+:root {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  font-family: "ProximaNova-regular";
+  color: #212732;
+  font-size: 15px;
+  line-height: 20px;
+  margin: 0;
+  padding: 0;
+  margin-top: 1px;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #2281c2;
+  font-weight: 500;
+  font-family: "ProximaNova-Bold";
+}
+.container :nth-child(2) a {
+  margin-left: 4px;
+}
+.paragraph-dark-left :nth-child(4) {
+  margin-left: 4px;
+}
+
+.header-below .title {
+  font-family: "ProximaNova-bold";
+  color: #fff;
+  font-size: 46px;
+  font-weight: 500;
+  letter-spacing: -0.1px;
+  line-height: 54px;
+  margin-bottom: 1px;
+}
+h2 {
+  font-size: 38px;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  letter-spacing: -0.1px;
+}
+p {
+  margin: 0;
+}
+header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #263849;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+.header-nav {
+  display: flex;
+  flex-direction: row;
+  padding: 0px 24px;
+  width: 100%;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1296px;
+}
+.header-ul {
+  padding-left: 0px;
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  margin: 11px 0px;
+  justify-content: center;
+}
+.header-ul li a {
+  font-family: "ProximaNova-semiBold";
+  color: #fff;
+  display: flex;
+  font-weight: 400;
+  margin-right: 8px;
+  padding: 20px 15px;
+  font-size: 15px;
+  letter-spacing: -0.1px;
+  line-height: 1.33;
+}
+.header-below {
+  font-family: "ProximaNova-regular";
+  align-items: center;
+  background-color: #263849;
+  padding-bottom: 40px;
+  padding-top: 62px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.main-search-div {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1296px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.search-bar-div {
+  width: 873.594px;
+  clear: none;
+  margin: 0 auto 15px auto;
+}
+.search-bar-div h2 {
+  line-height: 22px;
+  margin-bottom: 15px;
+  margin-top: 0;
+  color: #b9b9b9;
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 15px;
+  text-align: center;
+  width: 100%;
+}
+.search-bar-div form {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+.search-bar-div form .url-input {
+  flex-grow: 1;
+  font-size: 20px;
+  line-height: 28px;
+  font-family: "ProximaNova-regular";
+  background-color: #fff;
+  color: #fffffd;
+  border: 1px solid rgba(175, 185, 197, 0.36);
+  border-radius: 4px;
+  font-weight: 400;
+  color: #161c34;
+  margin-bottom: 0;
+  padding: 10px 12px;
+  vertical-align: middle;
+  width: 100%;
+  text-decoration: none;
+}
+.btn-div input {
+  font-family: "ProximaNova-semiBold";
+  margin-left: 10px;
+  padding: 11px 60px 11px 61px;
+  -webkit-appearance: button;
+  background-color: #2c96df;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 599;
+  line-height: 28px;
+  border: none;
+  height: 50px;
+}
+.terms-and-use-text-div {
+  margin-top: 25px;
+  color: #b9b9b9;
+  font-size: 16px;
+  font-weight: 300;
+  text-align: center;
+}
+.terms-and-use-text-div a {
+  color: #b9b9b9;
+  font-family: "ProximaNova-regular";
+  text-decoration: underline;
+}
+
+.subscription-detail-container {
+  background: #196091;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: #fff;
+  overflow: visible;
+  padding: 32px;
+  position: relative;
+  align-items: center;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+.titles-div {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+.titles-div h3 {
+  font-family: "ProximaNova-semiBold";
+  font-weight: 400;
+  line-height: 32px;
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: -0.1px;
+  margin: 0;
+}
+.titles-div h5 {
+  flex-grow: 1;
+  font-family: "ProximaNova-regular";
+  font-size: 15px;
+  line-height: 20px;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: -0.1px;
+  margin: 8px 0px 0px 0px;
+}
+.subtitles-div {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  font-size: 20px;
+  justify-self: flex-end;
+}
+.subtitles-div a {
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  color: #2281c2;
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.1px;
+  line-height: 28px;
+  padding: 11px 30px;
+}
+.subscription-detail-container .sub-price-text {
+  margin: 2px 0px 0px 14px;
+  color: #fff;
+  flex-grow: 1;
+}
+.sub-container {
+  display: flex;
+  margin-top: 16px;
+  align-items: center;
+}
+.sub-price-text span {
+  font-family: "ProximaNova-semiBold";
+}
+.contact-banner {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.contact-banner-left {
+  background-color: #f5f7f8;
+  flex-basis: 50%;
+  max-width: 50%;
+}
+.contact-banner-left .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: auto;
+  padding: 48px 8px 49px 36px;
+  max-width: 625px;
+}
+.contact-banner-left .container h2 {
+  font-family: "ProximaNova-semiBold";
+  font-size: 34px;
+  width: 95%;
+  font-weight: 400;
+  margin-bottom: 33px;
+  margin-top: 13px;
+  margin-left: 8px;
+}
+.contact-banner-left .container p {
+  letter-spacing: -0.1px;
+  line-height: 24px;
+  text-align: left;
+  margin-left: 8px;
+}
+.container .paragraph-dark-left {
+  margin-top: 20px;
+}
+.container-banner-right {
+  background-color: #eaf6ff;
+  flex-basis: 50%;
+  max-width: 50%;
+}
+.container-banner-right .container-right {
+  display: flex;
+  align-items: center;
+  display: flex;
+  padding: 1px 0px 48px 36px;
+  margin-right: auto;
+  height: 100%;
+}
+.phone-image-div {
+  margin-right: 36px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 3px;
+}
+.contact-details-container {
+  display: block;
+  margin-bottom: 3px;
+}
+.contact-details-container p {
+  font-family: "ProximaNova-semiBold";
+  font-size: 1.5rem;
+  line-height: 1.42;
+  margin-bottom: 16px !important;
+  font-weight: 400;
+  letter-spacing: -0.1px;
+  color: #212732;
+}
+.contact-details-container p strong {
+  font-family: "ProximaNova-bold";
+  font-size: 1.5rem;
+  line-height: 1.42;
+
+  font-weight: 500;
+  letter-spacing: -0.1px;
+  color: #212732;
+}
+.contact-details-container .details-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 21px;
+}
+.details-btns .try-btn {
+  cursor: pointer;
+  font-size: 0.75rem;
+  letter-spacing: -0.1px;
+  line-height: 1.33;
+  padding: 0;
+  position: relative;
+  text-decoration: none;
+  font-weight: 600;
+}
+.details-btns .try-btn button {
+  font-family: "ProximaNova-bold";
+  background: #2281c2;
+  border: 1px solid transparent;
+  color: #fff;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  padding: 10px 30px;
+  font-weight: 600;
+  justify-content: center;
+  letter-spacing: -0.1px;
+  text-decoration: none;
+  border-radius: 4px;
+  display: inline-flex;
+}
+.details-btns .talk-sales {
+  cursor: pointer;
+  font-size: 0.75rem;
+  letter-spacing: -0.1px;
+  line-height: 1.33;
+  padding: 0;
+  position: relative;
+  text-decoration: none;
+  font-weight: 600;
+}
+.details-btns .talk-sales button {
+  background: transparent;
+  font-family: "ProximaNova-bold";
+  border: 1px solid transparent;
+  color: #2281c2;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  padding: 10px 18px;
+  font-weight: 600;
+  border: 1px solid #2281c2;
+  justify-content: center;
+  letter-spacing: -0.1px;
+  text-decoration: none;
+  border-radius: 4px;
+  display: inline-flex;
+}
