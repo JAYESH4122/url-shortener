@@ -2,27 +2,32 @@ const express = require('express');
 const cors = require('cors');
 const sequelize = require('./config/db');
 const Url = require('./models/urls');
-const urlRoutes = require('./routes/urlRoutes')
+const urlRoutes = require('./routes/urlRoutes');
 
 const app = express();
-app.use(cors({
-  origin: 'http://localhost:5173',
+
+const corsOptions = {
+  origin: process.env.NODE_ENV === 'production' 
+    ? process.env.FRONTEND_URL 
+    : 'http://localhost:5173',
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type']
-}));
+};
 
-app.use(express.json())
+app.use(cors(corsOptions));
+app.use(express.json());
+app.use('/api', urlRoutes);
 
-app.use('/api', urlRoutes)
+const PORT = process.env.PORT || 5000;
 
 sequelize.authenticate()
   .then(() => {
     console.log('Database connected successfully.');
-    Url.sync();
+    return Url.sync();
   })
   .then(() => {
-    app.listen(5000, () => {
-      console.log('Server running on http://localhost:5000');
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
     });
   })
   .catch((err) => {
