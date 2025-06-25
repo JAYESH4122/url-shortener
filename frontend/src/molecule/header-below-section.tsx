@@ -1,6 +1,7 @@
 import { Button } from "../atom/Button";
 import data from "../data/data";
 import type { ParagraphWithLinks } from "../data/types";
+import { useState, type FormEvent } from "react";
 
 const renderTextWithLinks = (content: ParagraphWithLinks) => {
   return content.parts?.map((part, index) => {
@@ -22,6 +23,34 @@ const renderTextWithLinks = (content: ParagraphWithLinks) => {
 
 export const HeaderBelowSection = () => {
   const { headerBelow } = data;
+  const [url, setUrl] = useState("");
+  const [shortLink, setShortLink] = useState("");
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:5000/api/shorten", {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({ original_url: url }),
+      });
+
+      const data = await response.json();
+
+      setShortLink(data.short_url);
+    } catch (err) {
+      console.log("Error occured:", err);
+    }
+  };
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(shortLink);
+  };
+
+  const clearLink = () => {
+    setShortLink("");
+    setUrl("");
+  };
 
   return (
     <section className="header-below">
@@ -29,13 +58,30 @@ export const HeaderBelowSection = () => {
       <div className="main-search-div">
         <div className="search-bar-div">
           <h2>{renderTextWithLinks(headerBelow.mainText)}</h2>
-          <form>
-            <input
-              className="url-input"
-              type="text"
-              placeholder={headerBelow.inputPlaceholder}
-            />
-            <Button />
+          <form onSubmit={handleSubmit}>
+            <div className="input-btn-wrapper">
+              <input
+                className="url-input"
+                type="url"
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+                placeholder={headerBelow.inputPlaceholder}
+              />
+              <Button />
+            </div>
+
+            {shortLink && (
+              <div className="link-input-show">
+                <input
+                  className="url-input"
+                  type="url"
+                  value={shortLink}
+                  readOnly
+                />
+                <button onClick={copyToClipboard}>Copy</button>
+                <button onClick={clearLink}>Clear</button>
+              </div>
+            )}
           </form>
           <div className="terms-and-use-text-div">
             <p>{renderTextWithLinks(headerBelow.termsText)}</p>

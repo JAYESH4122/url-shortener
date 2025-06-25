@@ -1,15 +1,24 @@
 const express = require('express');
 const cors = require('cors');
 const sequelize = require('./config/db');
+const Url = require('./models/urls');
+const urlRoutes = require('./routes/urlRoutes')
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:5173',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type']
+}));
+
 app.use(express.json())
+
+app.use('/api', urlRoutes)
 
 sequelize.authenticate()
   .then(() => {
     console.log('Database connected successfully.');
-    return sequelize.sync();
+    Url.sync();
   })
   .then(() => {
     app.listen(5000, () => {

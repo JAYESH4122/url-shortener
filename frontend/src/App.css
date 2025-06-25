@@ -144,9 +144,9 @@ header {
   align-items: center;
   display: flex;
   position: relative;
+  flex-direction: column;
 }
 .search-bar-div form .url-input {
-  flex-grow: 1;
   font-size: 20px;
   line-height: 28px;
   font-family: "ProximaNova-regular";
@@ -394,4 +394,30 @@ header {
   text-decoration: none;
   border-radius: 4px;
   display: inline-flex;
+}
+.link-input-show {
+  display: flex;
+  margin-top: 18px;
+  width: 100%;
+}
+.input-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.link-input-show input{
+  width: 100%;
+}
+.link-input-show button {
+  margin-left: 10px;
+  padding: 11px 60px 11px 61px;
+  border: 1px solid #2281c2;
+  border-radius: 4px;
+  background-color: #2281c2;
+  color: white;
+  font-size: 20px;
+  line-height: 28px;
+  border: none;
+  height: 50px;
+  cursor: pointer;
 }

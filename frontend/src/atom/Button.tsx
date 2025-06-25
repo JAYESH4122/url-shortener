@@ -1,7 +1,7 @@
 export const Button = () =>{
     return(
         <div className="btn-div">
-            <input type="button" value="Shorten URL"/>
+            <input type="submit" value="Shorten URL"/>
         </div>
     )
 }
