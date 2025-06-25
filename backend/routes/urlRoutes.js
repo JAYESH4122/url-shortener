@@ -13,7 +13,7 @@ function generateShortCode(url) {
     .substring(0, 6);
 }
 
-// Shorten URL endpoint
+// POST /api/shorten
 router.post("/shorten", async (req, res) => {
   try {
     const { original_url } = req.body;
@@ -54,18 +54,12 @@ router.post("/shorten", async (req, res) => {
   }
 });
 
-// Redirect endpoint
-router.get("/:short_code", async (req, res) => {
+// GET /api/:code (must be 6-character alphanumeric)
+router.get("/:code([a-f0-9]{6})", async (req, res) => {
   try {
-    const { short_code } = req.params;
-    
-    // Validate short code format
-    if (!short_code || !/^[a-f0-9]{6}$/.test(short_code)) {
-      return res.status(400).json({ error: "Invalid short code format" });
-    }
-
+    const { code } = req.params;
     const urlRecord = await Url.findOne({ 
-      where: { short_code },
+      where: { short_code: code },
       attributes: ['original_url']
     });
 
@@ -74,7 +68,7 @@ router.get("/:short_code", async (req, res) => {
     }
 
     // Track clicks
-    await Url.increment('clicks', { where: { short_code } });
+    await Url.increment('clicks', { where: { short_code: code } });
     
     return res.redirect(301, urlRecord.original_url);
   } catch (err) {
@@ -84,6 +78,11 @@ router.get("/:short_code", async (req, res) => {
       request_id: req.id
     });
   }
+});
+
+// 404 handler for invalid short codes
+router.get("/:invalidCode", (req, res) => {
+  res.status(404).json({ error: "Invalid short URL format - must be 6 alphanumeric characters" });
 });
 
 module.exports = router;
