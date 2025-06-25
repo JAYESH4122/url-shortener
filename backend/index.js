@@ -9,7 +9,7 @@ const app = express();
 
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production' 
-    ? [process.env.FRONTEND_URL, 'https://your-frontend.up.railway.app'] 
+    ? [process.env.FRONTEND_URL, 'https://url-shortener-rho-olive.vercel.app/'] 
     : 'http://localhost:5173',
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
