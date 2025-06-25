@@ -8,13 +8,16 @@ const urlRoutes = require('./routes/urlRoutes');
 const app = express();
 
 const corsOptions = {
-  origin: process.env.NODE_ENV === 'production' 
-    ? [process.env.FRONTEND_URL, 'https://url-shortener-rho-olive.vercel.app/'] 
-    : 'http://localhost:5173',
-  methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  origin: [
+    'https://url-shortener-rho-olive.vercel.app', // Your Vercel frontend
+    'http://localhost:5173' // For local development
+  ],
+  methods: ['GET', 'POST', 'OPTIONS'], 
+  allowedHeaders: ['Content-Type'],
   credentials: true
 };
+
+app.options('*', cors(corsOptions)); 
 
 app.use(cors(corsOptions));
 app.use(express.json());
