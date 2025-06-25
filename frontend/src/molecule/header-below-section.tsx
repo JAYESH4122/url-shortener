@@ -1,3 +1,4 @@
+const API_URL = import.meta.env.VITE_API_URL;
 import { Button } from "../atom/Button";
 import data from "../data/data";
 import type { ParagraphWithLinks } from "../data/types";
@@ -29,7 +30,7 @@ export const HeaderBelowSection = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/api/shorten", {
+      const response = await fetch(`${API_URL}/shorten`, {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({ original_url: url }),
