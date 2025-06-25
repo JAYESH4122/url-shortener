@@ -1,4 +1,4 @@
-require('dotenv').config(); // Load env vars early
+require('dotenv').config(); 
 const express = require('express');
 const cors = require('cors');
 const sequelize = require('./config/db');
@@ -7,10 +7,9 @@ const urlRoutes = require('./routes/urlRoutes');
 
 const app = express();
 
-// Enhanced CORS configuration
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production' 
-    ? [process.env.FRONTEND_URL, 'https://your-frontend.up.railway.app'] // Add both for safety
+    ? [process.env.FRONTEND_URL, 'https://your-frontend.up.railway.app'] 
     : 'http://localhost:5173',
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
@@ -24,7 +23,7 @@ app.use('/api', urlRoutes);
 
 const PORT = process.env.PORT || 5000;
 
-// Database connection with retry logic
+
 const startServer = async () => {
   const maxRetries = 5;
   let retries = 0;
@@ -34,7 +33,6 @@ const startServer = async () => {
       await sequelize.authenticate();
       console.log('Database connected successfully.');
       
-      // Sync models - alter tables in dev, don't force in production
       await Url.sync({ alter: process.env.NODE_ENV !== 'production' });
       
       app.listen(PORT, () => {
@@ -43,7 +41,7 @@ const startServer = async () => {
         console.log(`CORS allowed origin: ${corsOptions.origin}`);
       });
       
-      break; // Exit loop if successful
+      break;
     } catch (err) {
       retries++;
       console.error(`Connection attempt ${retries} failed:`, err.message);
@@ -53,7 +51,7 @@ const startServer = async () => {
         process.exit(1);
       }
       
-      // Wait 5 seconds before retrying
+      
       await new Promise(res => setTimeout(res, 5000));
     }
   }
@@ -61,7 +59,6 @@ const startServer = async () => {
 
 startServer();
 
-// Enhanced error handling
 process.on('unhandledRejection', (err) => {
   console.error('Unhandled Rejection:', err);
   process.exit(1);
