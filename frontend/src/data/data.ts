@@ -115,5 +115,76 @@ const data: AppData = {
       },
     },
   },
+  testimonialSection: {
+    title: "Don't just take our word for it",
+    ratings: [
+      {
+        stars: 5,
+        score: "5/5",
+        platform: "TrustPilot",
+      },
+      {
+        stars: 4,
+        hasHalfStar: true,
+        score: "4.6/5",
+        platform: "G2Crowd",
+      },
+      {
+        stars: 5,
+        score: "5/5",
+        platform: "Capterra",
+      },
+    ],
+    counts: [
+      {
+        number: "2 billion",
+        description: "Clicks tracked each month",
+      },
+      {
+        number: "1 billion",
+        description: "Branded links created and counting",
+      },
+      {
+        number: "1.3 million",
+        description: "Happy customers",
+      },
+      {
+        number: "90,000",
+        description: "Developers using our APIs",
+      },
+    ],
+    logos: [
+      {
+        src: "https://web.archive.org/web/20250621150308/https://dashboard-cdn.rebrandly.com/dashboard-assets/images/logos/logo-customer-saint-gobain.svg",
+        alt: "logo",
+        width: 115,
+        height: 60,
+      },
+      {
+        src: "https://web.archive.org/web/20250621150308/https://dashboard-cdn.rebrandly.com/dashboard-assets/images/logos/logo-customer-samsonite.svg",
+        alt: "rebrandly-customer-logo-samsonite",
+        width: 115,
+        height: 60,
+      },
+      {
+        src: "https://web.archive.org/web/20250621150308/https://dashboard-cdn.rebrandly.com/dashboard-assets/images/logos/logo-customer-toyota.svg",
+        alt: "rebrandly-customer-logo-toyota",
+        width: 115,
+        height: 60,
+      },
+      {
+        src: "https://web.archive.org/web/20250621150308/https://dashboard-cdn.rebrandly.com/dashboard-assets/images/logos/logo-customer-paypal.svg",
+        alt: "rebrandly-customer-logo-paypal",
+        width: 115,
+        height: 60,
+      },
+      {
+        src: "https://web.archive.org/web/20250621150308/https://dashboard-cdn.rebrandly.com/dashboard-assets/images/logos/logo-customer-cisco.svg",
+        alt: "rebrandly-customer-logo-cisco",
+        width: 115,
+        height: 60,
+      },
+    ],
+  },
 };
 export default data;

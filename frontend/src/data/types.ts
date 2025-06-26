@@ -1,4 +1,3 @@
-// types.ts
 export interface LinkPart {
   text: string;
   url: string;
@@ -50,4 +49,30 @@ export interface AppData {
     images: AppImages;
   };
   headerBelow: HeaderBelowContent;
+  testimonialSection: TestimonialSectionContent;
+}
+
+export interface RatingItem {
+  stars: number;
+  hasHalfStar?: boolean;
+  score: string;
+  platform: string;
+}
+
+export interface CountItem {
+  number: string;
+  description: string;
+}
+
+export interface LogoItem {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+export interface TestimonialSectionContent {
+  title: string;
+  ratings: RatingItem[];
+  counts: CountItem[];
+  logos: LogoItem[];
 }
