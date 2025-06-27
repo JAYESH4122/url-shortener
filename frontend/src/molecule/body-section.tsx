@@ -24,6 +24,7 @@ const renderParagraph = (content: ParagraphWithLinks) => {
 
 export const BodySection = () => {
   const { content, images } = data.bodySection;
+  const { description, buttons } = data.contactDetails;
 
   return (
     <section className="contact-banner">
@@ -47,19 +48,24 @@ export const BodySection = () => {
           </div>
           <div className="contact-details-container">
             <p>
-              Experience the{" "}
+              {description.prefix}
               <strong>
                 {" "}
-                benefits of link <br /> management{" "}
-              </strong>{" "}
-              for your business
+                {description.emphasized.text
+                  .split(" ")
+                  .slice(0, 3)
+                  .join(" ")}{" "}
+                <br />
+                {description.emphasized.text.split(" ").slice(3).join(" ")}{" "}
+              </strong>
+              {description.suffix}
             </p>
             <div className="details-btns">
-              <a href="" className="try-btn">
-                <button>Try Rebrandly</button>
+              <a href="#" className={buttons.try.className}>
+                <button>{buttons.try.text}</button>
               </a>
-              <a href="" className="talk-sales">
-                <button>Talk to Sales</button>
+              <a href="#" className={buttons.sales.className}>
+                <button>{buttons.sales.text}</button>
               </a>
             </div>
           </div>
