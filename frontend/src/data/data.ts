@@ -186,5 +186,109 @@ const data: AppData = {
       },
     ],
   },
+  banner: {
+    title: "Branded domains for just $2/year",
+    subtitle:
+      "Register a new custom domain and start creating branded links. Increase click-through-rate up to 39%.",
+    btn: "Search Domain",
+  },
+  faqSection: {
+    title: "Rebrandly Frequently Asked Questions",
+    imgIcon: "/question-logo.svg",
+    columns: [
+      [
+        { question: "What is URL shortener?" },
+        { question: "What is a custom URL shortener?" },
+        { question: "How do I shorten a URL for free?" },
+        { question: "Does Rebrandly offers free plans?" },
+        { question: "Can i use a domain I already own?" },
+        { question: "Do I have to install Rebrandly on my website?" },
+        { question: "How do i know your service Is rellable and scalable?" },
+        { question: "Can i use a domain I already own?" },
+      ],
+      [
+        { question: "Can i use a domain I already own?" },
+        { question: "Do I have to install Rebrandly on my website?" },
+        { question: "How do i know your service Is rellable and scalable?" },
+        { question: "What is a URL shortener?" },
+        { question: "What is a custom URL shortener?" },
+        { question: "How do I shorten a URL for free?" },
+        { question: "What is a URL shortener?" },
+        { question: "How do i know your service Is rellable and scalable?" },
+      ],
+    ],
+  },
+  footer: {
+    logo_title: "Powered by",
+    logo: "/rebrandly-logo.svg",
+    columns: [
+      [
+        { link_text: "What is a branded link" },
+        { link_text: "UTM builder" },
+        { link_text: "Link retargeting" },
+        { link_text: "Link shortener" },
+      ],
+      [
+        { link_text: "Link tracking" },
+        { link_text: "Free URL shortener" },
+        { link_text: "Bitly URL shortener" },
+        { link_text: "TinyURL alternative" },
+      ],
+      [
+        { link_text: "Youtube URL shortener" },
+        { link_text: "Custom short urls" },
+        { link_text: "Vanity URL" },
+        { link_text: "Marketing tools" },
+      ],
+      [
+        { link_text: "Best URL shorteners" },
+        { link_text: "SMS links" },
+        { link_text: "Twitter bio link" },
+        { link_text: "Link management" },
+      ],
+      [
+        { link_text: "Instagram bio URL" },
+        { link_text: "Create QR codes" },
+        { link_text: "Bitly alternative" },
+        { link_text: "Marketing blogs" },
+      ],
+      [
+        { link_text: "URL shortener" },
+        { link_text: "Goo.gl" },
+        { link_text: "Bitly enterprise alternative" },
+        { link_text: "Migrate short URLs" },
+      ],
+    ],
+  },
+  subfooter: {
+    content_col: [
+      { text: "Terms & Conditions" },
+      { text: "Privacy Policy" },
+      { text: "Cookie Policy" },
+      { text: "Anti Spam Policy" },
+      { text: "Report abuse" },
+    ],
+    copyright_text: "Rebrandly © Copyright 2025",
+  },
+  contactDetails: {
+    description: {
+      prefix: "Experience the",
+      emphasized: {
+        text: "benefits of link management",
+        break: true,
+      },
+      suffix: "for your business",
+    },
+    buttons: {
+      try: {
+        text: "Try Rebrandly",
+        className: "try-btn",
+      },
+      sales: {
+        text: "Talk to Sales",
+        className: "talk-sales",
+      },
+    },
+  },
 };
 export default data;
